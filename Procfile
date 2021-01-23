@@ -1,1 +1,1 @@
-web: streamlit run job.py
+web: streamlit run main.py
