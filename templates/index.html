@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>BIKE</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Hourly bike rental Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="POST">
+    	<input type="text" name="season" placeholder="season" required="required" />
+        <input type="text" name="holiday" placeholder="holiday" required="required" />
+		<input type="text" name="workingday" placeholder="workingday" required="required" />
+    <input type="text" name="weather" placeholder="weather" required="required" />
+    <input type="text" name="temp" placeholder="temp" required="required" />
+    <input type="text" name="humidity" placeholder="humidity" required="required" />
+    <input type="text" name="windspeed" placeholder="windspeed" required="required" />
+    <input type="text" name="casual" placeholder="casual" required="required" />
+    <input type="text" name="registered" placeholder="registered" required="required" />
+    <input type="text" name="hour" placeholder="hour" required="required" />
+    <input type="text" name="month" placeholder="month" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+
+ </div>
+{{ pred }}
+
+</body>
+</html>
